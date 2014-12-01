@@ -16,7 +16,7 @@
     <body>
         <h1>Hello World!</h1>
     <sql:query var="users" dataSource="jdbc/Sklep">
-        SELECT userID, name FROM user
+        SELECT name, price FROM product
     </sql:query>
         
     <table border="1">
