@@ -18,45 +18,45 @@
     <h1>Ustawienia konta</h1>
     <p>
         Email:<br />
-        <input name="ctl00$defaultContent$TextBox1" type="text" id="defaultContent_TextBox1" />
+        <input name="email" type="text"  />
     </p>
     <p>
         Login:<br />
-        <input name="ctl00$defaultContent$TextBox2" type="text" id="defaultContent_TextBox2" />
+        <input name="login" type="text" />
     </p>
     <p>
         Hasło:<br />
-        <input name="ctl00$defaultContent$TextBox3" type="text" id="defaultContent_TextBox3" />
+        <input name="password" type="text"  />
     </p>
     <p>
         Powtórz hasło:</p>
     <p>
-        <input name="ctl00$defaultContent$TextBox4" type="text" id="defaultContent_TextBox4" />
+        <input name="confirmPassword" type="text"  />
     </p>
     <p>
         Stare hasło:<br />
-        <input name="ctl00$defaultContent$TextBox5" type="text" id="defaultContent_TextBox5" />
+        <input name="oldPassword" type="text"  />
     </p>
     <h1>Moje dane</h1>
     <p>
         Imię:<br />
-        <input name="ctl00$defaultContent$TextBox6" type="text" id="defaultContent_TextBox6" />
+        <input name="name" type="text" />
     </p>
     <p>
         Nazwisko:<br />
-        <input name="ctl00$defaultContent$TextBox7" type="text" id="defaultContent_TextBox7" />
+        <input name="lastName" type="text"  />
     </p>
     <p>
         Adres:<br />
-        <input name="ctl00$defaultContent$TextBox8" type="text" id="defaultContent_TextBox8" />
+        <input name="address" type="text"  />
     </p>
     <p>
         Kod pocztowy<br />
-        <input name="ctl00$defaultContent$TextBox9" type="text" id="defaultContent_TextBox9" />
+        <input name="postCode" type="text"  />
     </p>
     <p>
         Tel kom. :<br />
-        <input name="ctl00$defaultContent$TextBox10" type="text" id="defaultContent_TextBox10" />
+        <input name="number" type="text"  />
     </p>
 
     </div>

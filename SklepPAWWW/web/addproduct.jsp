@@ -19,10 +19,10 @@
 
         <div id="sidebar">
             
-            <img id="defaultContent_Image1" style="height:164px;width:171px;" />
+            <img  style="height:164px;width:171px;" />
              <br />
             <br />
-             <input type="file" name="ctl00$defaultContent$FileUpload1" id="defaultContent_FileUpload1" style="height:21px;width:214px;" />
+             <input type="file" name="image" style="height:21px;width:214px;" />
         </div>
 
         <div id="rightcolumn">
@@ -30,13 +30,13 @@
             <span id="defaultContent_Label1">Nazwa produktu</span>
 
             <br />
-            <input name="ctl00$defaultContent$TextBox1" type="text" id="defaultContent_TextBox1" />
+            <input name="name" type="text" />
             <br />
             <br />
 
             <span id="defaultContent_Label2">Cena</span>
             <br />
-            <input name="ctl00$defaultContent$TextBox2" type="text" id="defaultContent_TextBox2" />
+            <input name="price" type="text" />
             <br />
 
         </div>
@@ -54,12 +54,12 @@
     <br />
     <br />
     <br />
-    <span id="defaultContent_Label3">Opis produktu</span>
-    <textarea name="ctl00$defaultContent$TextBox3" rows="50" cols="20" id="defaultContent_TextBox3" style="height:357px;width:437px;">
+    <span>Opis produktu</span>
+    <textarea name="description" rows="50" cols="20"  style="height:357px;width:437px;">
 </textarea>
     <br />
     <br />
-    <input type="submit" name="ctl00$defaultContent$Button1" value="Akceptuj" id="defaultContent_Button1" />
+    <input type="submit" value="Akceptuj" />
     <br />
     <br />
 
