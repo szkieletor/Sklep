@@ -10,7 +10,7 @@
 <head>
 <title>Marketplace - 2 Column</title>
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
-<link rel="stylesheet" href="images/MarketPlace.css" type="text/css" />
+<link rel="stylesheet" href="../images/MarketPlace.css" type="text/css" />
 </head>
 <body>
 <div id="wrap">

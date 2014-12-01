@@ -3,7 +3,7 @@
     Created on : 2014-12-01, 21:16:06
     Author     : QuAntic
 --%>
-<jsp:include page="masterpage.jsp" />
+<jsp:include page="../masterpage.jsp" />
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -68,4 +68,4 @@
         </form>
     </body>
 </html>
-<jsp:include page="masterpage2.jsp" />
+<jsp:include page="../masterpage2.jsp" />
