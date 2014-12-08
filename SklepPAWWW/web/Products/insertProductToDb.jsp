@@ -20,5 +20,6 @@
         <sql:param value="${param.description}" />
         <sql:param value="${param.price}" />
     </sql:update>
+        <c:redirect url="../index.html"/>
 </body>
 </html>

@@ -4,6 +4,7 @@
     Author     : QuAntic
 
 --%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <jsp:include page="../masterpage.jsp" />
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -39,6 +40,7 @@
                 <INPUT TYPE="SUBMIT" VALUE="Dodaj">
             </FORM>
         </div>
+
     </body>
 </html>
 <jsp:include page="../masterpage2.jsp" />
