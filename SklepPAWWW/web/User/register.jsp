@@ -19,24 +19,26 @@
                 <br>
                 <sql:param value="${param.city}" />
                 <sql:param value="${param.address}" />
-                Rejestracja:
+                <h1>Jestes nowym klientem? Zarejestruj się!</h1>
+                <br/>
                 <br>Login:<br>
                 <INPUT TYPE ="text" NAME = "login">
+                <br/>
                 <br>Hasło:<br>
                 <INPUT TYPE ="text" NAME = "password">
                 <br>Powtórz hasło:<br>
                 <INPUT TYPE ="text" NAME = "password2">
-                <br>Imie:<br>
+                <br/><br>Imie:<br>
                 <INPUT TYPE ="text" NAME = "name">
                 <br>Nazwisko:<br>
                 <INPUT TYPE ="text" NAME = "lastName">
                 <br>Email:<br>
                 <INPUT TYPE ="text" NAME = "email">
-                <br>City:<br>
+                <br/><br>City:<br>
                 <INPUT TYPE ="text" NAME = "city">
                 <br>Address:<br>
                 <INPUT TYPE ="text" NAME = "address">
-                <br>
+                <br/><br>
                 <INPUT TYPE="SUBMIT" VALUE="Dodaj">
             </FORM>
         </div>
