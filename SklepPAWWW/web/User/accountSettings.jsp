@@ -8,7 +8,7 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 
-<sql:query var="dbklient" dataSource="jdbc/Sklep">
+<sql:query var="user" dataSource="jdbc/Sklep">
     SELECT * FROM user
     WHERE userID=?  
     <sql:param value="${sessionScope.loggedIn}"/>
@@ -19,22 +19,29 @@
         <title>JSP Page</title>
     </head>
     <body>
+        <c:if test="${user.rows[0].isAdmin == true}">
+            <form action="adminPanel.jsp" method="POST">
+                <input type="submit" value="Panel administratora">
+            </form>
+        </c:if>
+        
+        
         <div class="dane">
             Aktualizuj dane:
             <form action="updateUserData.jsp" method="POST">
                 <div class="wierszdanych">
-                    <input size="5" type="text" name="name" value="${dbklient.rows[0].name}" />
+                    <input size="5" type="text" name="name" value="${user.rows[0].name}" />
                 </div>
                 <div class="wierszdanych">
-                    <input size="7" type="text" name="lastName" value="${dbklient.rows[0].lastName}" />
+                    <input size="7" type="text" name="lastName" value="${user.rows[0].lastName}" />
                 </div>
                 <div class="wierszdanych">
-                    <input size="7" type="text" name="email" value="${dbklient.rows[0].email}" />
+                    <input size="7" type="text" name="email" value="${user.rows[0].email}" />
                 </div>
                 <div class="wierszdanych">
-                    <input type="text" name="address" value="${dbklient.rows[0].address}" size="10" height="4"/>
+                    <input type="text" name="address" value="${user.rows[0].address}" size="10" height="4"/>
                 </div>
-                <input type="hidden" name="user" value="${dbklient.rows[0].id}"/>
+                <input type="hidden" name="user" value="${user.rows[0].id}"/>
 
                 <div class="wierszdanych">
                     <input type="submit" value="Zatwierdź" />
@@ -45,7 +52,7 @@
             Zmień hasło:
             <form action="updateUserData.jsp">
 
-                <input type="hidden" name="user" value="${dbklient.rows[0].userID}"/>
+                <input type="hidden" name="user" value="${user.rows[0].userID}"/>
 
                 <div class="wierszdanych">
                     <input size="5" type="password" name="oldpass"  /> 
