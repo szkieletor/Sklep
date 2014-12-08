@@ -5,14 +5,14 @@
     Created on : 2014-12-01, 18:54:27
     Author     : Mateusz
 --%>
-
+<jsp:include page="/masterpage.jsp" />
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 
 <!DOCTYPE html>
 <html>
-    <div id="logowanie">
+<div id="logowanie">
         <c:if test="${sessionScope.loggedIn==null}"> 
-            
+
             <a href="User/register.jsp">Zarejestruj</a>
             <form action="User/login.jsp" method="POST">
                 <input type="text" name="login" value="login" size="1" />
@@ -26,9 +26,12 @@
 
                 <sql:param value="${sessionScope.loggedIn}" />
             </sql:query>
-                Logged as ${login.rows[0].name}
+            Logged as ${login.rows[0].name}
             <form action="User/login.jsp" name="strona">
                 <input type="submit" value="wyloguj" />
+            </form>
+            <form action="User/accountSettings.jsp" name="strona">
+                <input type="submit" value="ustawienia konta" />
             </form>
         </c:if>
     </div>
@@ -61,3 +64,4 @@
         </table>
     </body>
 </html>
+<jsp:include page="/masterpage2.jsp" />

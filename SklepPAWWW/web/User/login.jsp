@@ -22,7 +22,7 @@
             </sql:query>
 
 
-            <c:if test="${login.rowCount>0}">'
+            <c:if test="${login.rowCount>0}">
 
                 <c:set scope="session" var="loggedIn" value="${login.rows[0].userID}" />
 

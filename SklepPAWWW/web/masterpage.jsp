@@ -10,28 +10,57 @@
 <head>
 <title>Marketplace - 2 Column</title>
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
-<link rel="stylesheet" href="../images/MarketPlace.css" type="text/css" />
+<link rel="stylesheet" href="/SklepPAWWW/images/MarketPlace.css" type="text/css" />
 </head>
 <body>
 <div id="wrap">
   <div id="header">
     <div id="header-links">
-      <p> <a href="http://www.free-css.com/">Home</a> | <a href="http://www.free-css.com/">Contact</a> | <a href="http://www.free-css.com/">Site Map</a> </p>
+        
+      <p> <a href="http://www.free-css.com/">Home</a> | <a href="User/register.jsp">Zarejestruj</a> | <a href="http://www.free-css.com/">Contact</a> | <a href="http://www.free-css.com/">Site Map</a> </p>
     </div>
   </div>
   <div id="header-photo">
-    <h1 id="logo-text"><a href="http://www.free-css.com/">marketplace</a></h1>
-    <h2 id="slogan">put your site slogan here...</h2>
+    <h1 id="logo-text"><a href="http://www.free-css.com/">PS3 Shop</a></h1>
+    <h2 id="slogan">Kupuj u nas!</h2>
   </div>
   <div  id="nav">
     <ul>
       <li><a href="http://www.free-css.com/">Home</a></li>
-      <li id="current"><a href="2-columns.php">2-Columns</a></li>
-      <li><a href="http://www.free-css.com/">Archives</a></li>
-      <li><a href="http://www.free-css.com/">Services</a></li>
-      <li><a href="http://www.free-css.com/">Support</a></li>
-      <li><a href="http://www.free-css.com/">About</a></li>
+      <li id="current"><a href="2-columns.php">Kategorie</a></li>
+      <li><a href="http://www.free-css.com/">Koszyk</a></li>
+      <li><a href="http://www.free-css.com/">Ustawienia Konta</a></li>
+      <li><a href="http://www.free-css.com/">Pomoc</a></li>
+      <li><a href="http://www.free-css.com/">O nas</a></li>
+      
     </ul>
+      <ul>  
+        <div id="logowanie">
+        <c:if test="${sessionScope.loggedIn==null}"> 
+
+            
+            <form action="/SklepPAWWW/User/login.jsp" method="POST">
+                <input type="text" name="login" value="login" size="1" />
+                <input type="password" name="password" value="password" size="1" />
+                <input type="submit"  />
+            </form>
+        </c:if>
+        <c:if test="${sessionScope.loggedIn!=null}"> 
+            <sql:query var="login" dataSource="jdbc/Sklep">
+                SELECT * FROM user WHERE userID = ?
+
+                <sql:param value="${sessionScope.loggedIn}" />
+            </sql:query>
+                <li>Logged as ${login.rows[0].name}</li>
+            <form action="/SklepPAWWW/User/login.jsp" name="strona">
+                <input type="submit" value="wyloguj" />
+            </form>
+            <form action="/SklepPAWWW/User/accountSettings.jsp" name="strona">
+                <input type="submit" value="ustawienia konta" />
+            </form>
+        </c:if>
+    </div>
+            </ul>
   </div>
   <div id="content-wrap" class="two-col"  >
     <div id="sidebar">

@@ -30,7 +30,7 @@
                 <div id="rightcolumn">
 
                     <span id="defaultContent_Label1">Nazwa produktu</span>
-
+                    <br />
                     <br />
                     <input name="name" type="text" />
                     <br />
