@@ -3,7 +3,8 @@
     Created on : 2014-12-01, 19:40:03
     Author     : QuAntic
 --%>
-
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@taglib prefix="sql" uri="http://java.sun.com/jsp/jstl/sql"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
@@ -15,9 +16,31 @@
 <body>
 <div id="wrap">
   <div id="header">
+      <div id="logowanie">
+        <c:if test="${sessionScope.loggedIn==null}"> 
+
+            
+            <form action="/SklepPAWWW/User/login.jsp" method="POST" class="logowanie">
+                <input type="text" name="login" value="login" size="1" class="textbox"/>
+                <input type="password" name="password" value="password" size="1" class="textbox"/>
+                <input type="submit" value="zaloguj" class="button"/>
+            </form>
+        </c:if>
+        <c:if test="${sessionScope.loggedIn!=null}"> 
+            <sql:query var="login" dataSource="jdbc/Sklep">
+                SELECT * FROM user WHERE userID = ?
+
+                <sql:param value="${sessionScope.loggedIn}" />
+            </sql:query>
+            <form action="/SklepPAWWW/User/login.jsp" name="strona" class="logowanie">
+                <text>Zalogowany jako ${login.rows[0].name}</text>
+                <input type="submit" value="wyloguj"  class="button"/>
+            </form>
+            
+        </c:if>
+    </div>
     <div id="header-links">
-        
-      <p> <a href="http://www.free-css.com/">Home</a> | <a href="User/register.jsp">Zarejestruj</a> | <a href="http://www.free-css.com/">Contact</a> | <a href="http://www.free-css.com/">Site Map</a> </p>
+         <p> <a href="http://www.free-css.com/">Home</a> | <a href="User/register.jsp">Zarejestruj</a> | <a href="http://www.free-css.com/">Contact</a> | <a href="http://www.free-css.com/">Site Map</a> </p>
     </div>
   </div>
   <div id="header-photo">
@@ -34,33 +57,6 @@
       <li><a href="http://www.free-css.com/">O nas</a></li>
       
     </ul>
-      <ul>  
-        <div id="logowanie">
-        <c:if test="${sessionScope.loggedIn==null}"> 
-
-            
-            <form action="/SklepPAWWW/User/login.jsp" method="POST">
-                <input type="text" name="login" value="login" size="1" />
-                <input type="password" name="password" value="password" size="1" />
-                <input type="submit"  />
-            </form>
-        </c:if>
-        <c:if test="${sessionScope.loggedIn!=null}"> 
-            <sql:query var="login" dataSource="jdbc/Sklep">
-                SELECT * FROM user WHERE userID = ?
-
-                <sql:param value="${sessionScope.loggedIn}" />
-            </sql:query>
-                <li>Logged as ${login.rows[0].name}</li>
-            <form action="/SklepPAWWW/User/login.jsp" name="strona">
-                <input type="submit" value="wyloguj" />
-            </form>
-            <form action="/SklepPAWWW/User/accountSettings.jsp" name="strona">
-                <input type="submit" value="ustawienia konta" />
-            </form>
-        </c:if>
-    </div>
-            </ul>
   </div>
   <div id="content-wrap" class="two-col"  >
     <div id="sidebar">
